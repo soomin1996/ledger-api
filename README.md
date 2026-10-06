@@ -1,4 +1,4 @@
-GitHub: https://github.com/soomin1996/ledger-api · Render: (배포 후 추가)
+GitHub: https://github.com/soomin1996/ledger-api · Render: https://ledger-api-vnht.onrender.com (API 문서: https://ledger-api-vnht.onrender.com/docs)
 
 # 가계부 API — FastAPI + Supabase(PostgreSQL)
 
@@ -21,6 +21,7 @@ GitHub: https://github.com/soomin1996/ledger-api · Render: (배포 후 추가)
 
 - 로컬(`127.0.0.1:8000`)에서 계좌 1개(월급통장), 카테고리 2개(식비·교통), 거래 2건(점심 -12,000 / 지하철 -1,500)을 넣었고 Supabase Table Editor에서 확인했다.
 - `GET /stats/by-category` 결과: `[{"category":"교통","total":-1500,"count":1},{"category":"식비","total":-12000,"count":1}]`
+- Render 배포 후 `GET /accounts`가 로컬에서 만든 계좌(월급통장)를 그대로 돌려줬고, 배포 주소에서 `POST /accounts`로 만든 「배포테스트」 계좌가 Supabase `accounts` 테이블에 바로 나타났다 → 로컬 앱과 Render 앱이 같은 Supabase DB를 본다.
 - (캡처 추가 예정: Supabase Table Editor, Render `/docs`의 `GET /accounts`)
 
 ### ② 핵심 개념 되새김
